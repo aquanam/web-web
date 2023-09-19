@@ -1,18 +1,5 @@
 /* actions.js for the web-web */
 
-function redirect(url) {
-    // change_4_redir var
-    const change_4_redir = document.getElementById("change_4_redir")
-    // Check if url is equal to web-web's url
-    if (ensureHttpsWww(url) === "https://www.aquanam.github.io/web-web") {
-        change_4_redir.innerHTML = "<p>Sorry, but you can't redirect to web-web's URL. Why anyways?<p>"
-        return 1
-    }
-    // Redirect to url
-    change_4_redir.innerHTML = `<p>Redirecting to ${url}...</p>`
-    window.location.href = url
-}
-
 // Ensure that URL has 'https://www.'
 function ensureHttpsWww(url) {
     if (url.startsWith("https://www.")) {
@@ -38,6 +25,20 @@ function ensureHttpsWww(url) {
 
     return "https://www." + url
 }
+
+function redirect(url) {
+    // change_4_redir var
+    const change_4_redir = document.getElementById("change_4_redir")
+    // Check if url is equal to web-web's url
+    if (ensureHttpsWww(url) === "https://www.aquanam.github.io/web-web") {
+        change_4_redir.innerHTML = "<p>Sorry, but you can't redirect to web-web's URL. Why anyways?<p>"
+        return 1
+    }
+    // Redirect to url
+    change_4_redir.innerHTML = `<p>Redirecting to ${url}...</p>`
+    window.location.href = url
+}
+
 
 // Event listener for input field
 var URLInput = document.getElementById("url_redir")
