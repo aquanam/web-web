@@ -4,7 +4,7 @@ function redirect(url) {
     // change_4_redir var
     const change_4_redir = document.getElementById("change_4_redir")
     // Check if url is equal to web-web's url
-    if (url === "127.0.0.1:5500") {
+    if (ensureHttpsWww(url) === "https://www.aqunam.github.io/web-web") {
         change_4_redir.innerHTML = "<p>Sorry, but you can't redirect to web-web's URL. Why anyways?<p>"
         return 1
     }
